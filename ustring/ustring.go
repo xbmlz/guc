@@ -16,16 +16,6 @@ func IsBlank(s string) bool {
 	return IsEmpty(s) || len(strings.TrimSpace(s)) == 0
 }
 
-// IsNotEmpty returns true if the string is not empty.
-func IsNotEmpty(s string) bool {
-	return !IsEmpty(s)
-}
-
-// IsNotBlank returns true if the string is not empty and contains at least one non-white space codepoint.
-func IsNotBlank(s string) bool {
-	return !IsBlank(s)
-}
-
 // HasEmpty returns true if any of the strings is empty.
 func HasEmpty(s ...string) bool {
 	if len(s) == 0 {
