@@ -1,7 +1,7 @@
 # GCU
 
 [![Build Status](https://github.com/xbmlz/guc/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/features/actions)
-[![Coverage Status](https://img.shields.io/coveralls/github/xbmlz/guc.svg?style=flat-square)](https://coveralls.io/github/xbmlz/guc)
+[![Coverage Status](https://coveralls.io/repos/github/xbmlz/guc/badge.svg?branch=main)](https://coveralls.io/github/xbmlz/guc?branch=main)
 [![Go Report Card](https://goreportcard.com/badge/github.com/xbmlz/guc)](https://goreportcard.com/report/github.com/xbmlz/guc)
 [![Go Doc](https://godoc.org/github.com/xbmlz/guc?status.svg)](https://godoc.org/github.com/xbmlz/guc)
 [![Code Size](https://img.shields.io/github/languages/code-size/xbmlz/guc.svg?style=flat-square)](https://github.com/xbmlz/guc)
