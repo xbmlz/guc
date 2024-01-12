@@ -6,6 +6,6 @@
 [![Go Doc](https://godoc.org/github.com/xbmlz/guc?status.svg)](https://godoc.org/github.com/xbmlz/guc)
 [![Release](https://img.shields.io/github/release/xbmlz/guc.svg?style=flat-square)](https://github.com/xbmlz/guc/releases)
 
-Golang Util Collections
+Golang Utilities Collection
 
 🏗️ WIP
