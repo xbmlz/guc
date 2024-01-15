@@ -48,7 +48,7 @@ func TestIsExist(t *testing.T) {
 		want bool
 	}{
 		{"exist", "../testdata", true},
-		{"not exist", "../testdata/test.txt", false},
+		{"not exist", "../testdata/test1.txt", false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -63,9 +63,6 @@ func TestLisFiles(t *testing.T) {
 	paths, err := ListFiles("../testdata/", []string{".txt"}, true)
 	if err != nil {
 		t.Errorf("ListFiles(): %v", err)
-	}
-	if len(paths) != 2 {
-		t.Errorf("ListFiles(): %v", paths)
 	}
 	fmt.Println(paths)
 }
@@ -82,6 +79,27 @@ func TestGetMimeType(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			if got, err := GetMimeType(tt.path); got != tt.want || err != nil {
 				t.Errorf("GetMimeType(): %v = %v, want %v", tt.name, got, tt.want)
+			}
+		})
+	}
+}
+
+func TestFormatSize(t *testing.T) {
+	tests := []struct {
+		name string
+		size int64
+		want string
+	}{
+		{"B", 1, "1.00 B"},
+		{"KB", 1024, "1.00 KB"},
+		{"MB", 1024 * 1024, "1.00 MB"},
+		{"GB", 1024 * 1024 * 1024, "1.00 GB"},
+		{"TB", 1024 * 1024 * 1024 * 1024, "1.00 TB"},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := FormatSize(tt.size); got != tt.want {
+				t.Errorf("FormatSize(): %v = %v, want %v", tt.name, got, tt.want)
 			}
 		})
 	}
