@@ -7,6 +7,8 @@
 
 # Test binary, built with `go test -c`
 *.test
+testdata_copy/
+testdata/test_copy.txt
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
@@ -15,3 +17,4 @@
 # vendor/
 
 covprofile
+
