@@ -1,6 +1,7 @@
 package ufile
 
 import (
+	"bufio"
 	"fmt"
 	"io"
 	"net/http"
@@ -116,6 +117,7 @@ func GetMimeType(path string) (string, error) {
 	return mimeType, nil
 }
 
+// FormatSize formats a file size to a human readable string.
 func FormatSize(fileSize int64) (size string) {
 	if fileSize < 1024 {
 		//return strconv.FormatInt(fileSize, 10) + "B"
@@ -131,4 +133,38 @@ func FormatSize(fileSize int64) (size string) {
 	} else { //if fileSize < (1024 * 1024 * 1024 * 1024 * 1024 * 1024)
 		return fmt.Sprintf("%.2f EB", float64(fileSize)/float64(1024*1024*1024*1024*1024))
 	}
+}
+
+// Write content to file
+func Write(path, content string, append bool) (err error) {
+	mode := os.O_WRONLY | os.O_CREATE
+	if append {
+		mode = mode | os.O_APPEND
+	} else {
+		mode = mode | os.O_TRUNC
+	}
+	file, err := os.OpenFile(path, mode, 0o666)
+	if err != nil {
+		return err
+	}
+	defer func() {
+		_ = file.Close()
+	}()
+	writer := bufio.NewWriter(file)
+	if _, err := writer.WriteString(content); err != nil {
+		return err
+	}
+	if err := writer.Flush(); err != nil {
+		return err
+	}
+	return nil
+}
+
+// Read content from file
+func Read(path string) (string, error) {
+	content, err := os.ReadFile(path)
+	if err != nil {
+		return "", err
+	}
+	return string(content), nil
 }

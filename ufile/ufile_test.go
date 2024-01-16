@@ -104,3 +104,37 @@ func TestFormatSize(t *testing.T) {
 		})
 	}
 }
+
+func TestWrite(t *testing.T) {
+	tests := []struct {
+		name string
+		path string
+		want string
+	}{
+		{"txt", "../testdata/test.txt", "hello"},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if err := Write(tt.path, tt.want, true); err != nil {
+				t.Errorf("Write(): %v = %v, want %v", tt.name, err, nil)
+			}
+		})
+	}
+}
+
+func TestRead(t *testing.T) {
+	tests := []struct {
+		name string
+		path string
+		want string
+	}{
+		{"txt", "../testdata/test.txt", "hello"},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got, err := Read(tt.path); got != tt.want || err != nil {
+				t.Errorf("Read(): %v = %v, want %v", tt.name, got, tt.want)
+			}
+		})
+	}
+}
