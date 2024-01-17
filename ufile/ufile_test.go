@@ -115,7 +115,7 @@ func TestWrite(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if err := Write(tt.path, tt.want, true); err != nil {
+			if err := Write(tt.path, tt.want, false); err != nil {
 				t.Errorf("Write(): %v = %v, want %v", tt.name, err, nil)
 			}
 		})
@@ -134,6 +134,23 @@ func TestRead(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			if got, err := Read(tt.path); got != tt.want || err != nil {
 				t.Errorf("Read(): %v = %v, want %v", tt.name, got, tt.want)
+			}
+		})
+	}
+}
+
+func TestMkdirAll(t *testing.T) {
+	tests := []struct {
+		name string
+		path string
+	}{
+		{"dir", "../testdata/test"},
+		{"dir", "."},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if err := MkdirAll(tt.path); err != nil {
+				t.Errorf("MkdirAll(): %v = %v, want %v", tt.name, err, nil)
 			}
 		})
 	}

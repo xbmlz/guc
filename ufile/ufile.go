@@ -74,6 +74,17 @@ func IsExist(path string) bool {
 	return err == nil
 }
 
+// MkdirAll
+func MkdirAll(path string) error {
+	// if dir not exist, create it
+	if !IsExist(path) {
+		if err := os.MkdirAll(path, 0755); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 // ListFiles lists all files in a directory.
 func ListFiles(dir string, exts []string, recursive bool) ([]string, error) {
 	var paths []string
