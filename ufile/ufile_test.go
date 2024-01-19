@@ -35,7 +35,7 @@ func TestIsDir(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := IsDir(tt.path); got != tt.want {
-				t.Errorf("IsDir(): %v = %v, want %v", tt.name, got, tt.want)
+				t.Errorf("IsDir(): name %v , got %v, want %v", tt.name, got, tt.want)
 			}
 		})
 	}
@@ -53,7 +53,7 @@ func TestIsExist(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := IsExist(tt.path); got != tt.want {
-				t.Errorf("IsExist(): %v = %v, want %v", tt.name, got, tt.want)
+				t.Errorf("IsExist(): name %v , got %v, want %v", tt.name, got, tt.want)
 			}
 		})
 	}
@@ -78,7 +78,7 @@ func TestGetMimeType(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got, err := GetMimeType(tt.path); got != tt.want || err != nil {
-				t.Errorf("GetMimeType(): %v = %v, want %v", tt.name, got, tt.want)
+				t.Errorf("GetMimeType(): name %v , got %v, want %v", tt.name, got, tt.want)
 			}
 		})
 	}
@@ -99,7 +99,7 @@ func TestFormatSize(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := FormatSize(tt.size); got != tt.want {
-				t.Errorf("FormatSize(): %v = %v, want %v", tt.name, got, tt.want)
+				t.Errorf("FormatSize(): name %v , got %v, want %v", tt.name, got, tt.want)
 			}
 		})
 	}
@@ -116,7 +116,7 @@ func TestWrite(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if err := Write(tt.path, tt.want, false); err != nil {
-				t.Errorf("Write(): %v = %v, want %v", tt.name, err, nil)
+				t.Errorf("Write(): name %v , got %v, want %v", tt.name, err, nil)
 			}
 		})
 	}
@@ -133,7 +133,7 @@ func TestRead(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got, err := Read(tt.path); got != tt.want || err != nil {
-				t.Errorf("Read(): %v = %v, want %v", tt.name, got, tt.want)
+				t.Errorf("Read(): name %v , got %v, want %v", tt.name, got, tt.want)
 			}
 		})
 	}
@@ -150,7 +150,7 @@ func TestMkdirAll(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if err := MkdirAll(tt.path); err != nil {
-				t.Errorf("MkdirAll(): %v = %v, want %v", tt.name, err, nil)
+				t.Errorf("MkdirAll(): name %v , got %v, want %v", tt.name, err, nil)
 			}
 		})
 	}

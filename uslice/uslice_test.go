@@ -16,7 +16,7 @@ func TestIsExist(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := IsExist(tt.s, tt.v); got != tt.want {
-				t.Errorf("IsExist(): %v = %v, want %v", tt.name, got, tt.want)
+				t.Errorf("IsExist(): name %v , got %v, want %v", tt.name, got, tt.want)
 			}
 		})
 	}

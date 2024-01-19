@@ -16,7 +16,7 @@ func TestIsEmpty(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := IsEmpty(tt.s); got != tt.want {
-				t.Errorf("IsEmpty(): %v = %v, want %v", tt.name, got, tt.want)
+				t.Errorf("IsEmpty(): name %v , got %v, want %v", tt.name, got, tt.want)
 			}
 		})
 	}
@@ -36,7 +36,7 @@ func TestIsBlank(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := IsBlank(tt.s); got != tt.want {
-				t.Errorf("IsBlank(): %v = %v, want %v", tt.name, got, tt.want)
+				t.Errorf("IsBlank(): name %v , got %v, want %v", tt.name, got, tt.want)
 			}
 		})
 	}
@@ -55,7 +55,7 @@ func TestHasEmpty(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := HasEmpty(tt.s...); got != tt.want {
-				t.Errorf("HasEmpty(): %v = %v, want %v", tt.name, got, tt.want)
+				t.Errorf("HasEmpty(): name %v , got %v, want %v", tt.name, got, tt.want)
 			}
 		})
 	}
@@ -74,7 +74,7 @@ func TestHasBlank(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := HasBlank(tt.s...); got != tt.want {
-				t.Errorf("HasBlank(): %v = %v, want %v", tt.name, got, tt.want)
+				t.Errorf("HasBlank(): name %v , got %v, want %v", tt.name, got, tt.want)
 			}
 		})
 	}
@@ -98,7 +98,7 @@ func TestRemovePrefix(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := RemovePrefix(tt.s, tt.p); got != tt.want {
-				t.Errorf("RemovePrefix(): %v = %v, want %v", tt.name, got, tt.want)
+				t.Errorf("RemovePrefix(): name %v , got %v, want %v", tt.name, got, tt.want)
 			}
 		})
 	}
@@ -122,7 +122,7 @@ func TestRemoveSuffix(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := RemoveSuffix(tt.s, tt.p); got != tt.want {
-				t.Errorf("RemoveSuffix(): %v = %v, want %v", tt.name, got, tt.want)
+				t.Errorf("RemoveSuffix(): name %v , got %v, want %v", tt.name, got, tt.want)
 			}
 		})
 	}
@@ -145,7 +145,7 @@ func TestFormat(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := Format(tt.s, tt.args...); got != tt.want {
-				t.Errorf("Format(): %v = %v, want %v", tt.name, got, tt.want)
+				t.Errorf("Format(): name %v , got %v, want %v", tt.name, got, tt.want)
 			}
 		})
 	}
@@ -165,7 +165,7 @@ func TestCapitalize(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := Capitalize(tt.s); got != tt.want {
-				t.Errorf("Capitalize(): %v = %v, want %v", tt.name, got, tt.want)
+				t.Errorf("Capitalize(): name %v , got %v, want %v", tt.name, got, tt.want)
 			}
 		})
 	}
