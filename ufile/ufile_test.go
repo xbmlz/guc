@@ -73,7 +73,7 @@ func TestGetMimeType(t *testing.T) {
 		path string
 		want string
 	}{
-		{"txt", "../testdata/test.jpeg", "image/jpeg"},
+		{"png", "../testdata/test.png", "image/png"},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

@@ -2,11 +2,31 @@ package ulog
 
 import (
 	"testing"
-
-	"github.com/stretchr/testify/assert"
 )
 
-func TestLogger(t *testing.T) {
-	SetLogger(DefaultLogger)
-	assert.Equal(t, DefaultLogger, GetLogger())
+func TestSetLevel(t *testing.T) {
+	StdLogger.SetLevel(LevelDebug)
+	StdLogger.SetLevel(LevelInfo)
+	StdLogger.SetLevel(LevelWarn)
+	StdLogger.SetLevel(LevelError)
+}
+
+func TestDebug(t *testing.T) {
+	StdLogger.Debug("debug")
+	StdLogger.Debugf("debugf: %v", "debug")
+}
+
+func TestInfo(t *testing.T) {
+	StdLogger.Info("info")
+	StdLogger.Infof("infof: %v", "info")
+}
+
+func TestWarn(t *testing.T) {
+	StdLogger.Warn("warn")
+	StdLogger.Warnf("warnf: %v", "warn")
+}
+
+func TestError(t *testing.T) {
+	StdLogger.Error("error")
+	StdLogger.Errorf("errorf: %v", "error")
 }
